@@ -38,11 +38,17 @@ $("body").ready(function() {
         count = 10;
     }
     else {
+        localStorage.removeItem("map_message");
         map_message = map_message.split("_");
         row = parseInt(map_message[1]);
         col = parseInt(map_message[0]);
         count = parseInt(map_message[2]);
-        localStorage.removeItem("map_message");
+        row = Math.floor(Math.max(row, 8));
+        col = Math.floor(Math.max(col, 8));
+        row = Math.floor(Math.min(row, 30));
+        col = Math.floor(Math.min(col, 30));
+        count = Math.floor(Math.max(count, 1));
+        count = Math.floor(Math.min(count, row * col - 1));
     }
     Init();
 });
