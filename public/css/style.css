@@ -1,0 +1,114 @@
+html, body {
+    background-color: #F7F7F7;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    white-space: nowrap;
+    user-select: none;
+}
+body:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.container_center {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    overflow: auto;
+}
+.table_all_center {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.table_all_center > tr > td {
+    width: 50%;
+}
+.btn_index {
+    width: 100%;
+    min-width: 200px;
+    max-width: 500px;
+    background-color: white;
+    border: 1px solid #CFCFCF;
+    border-radius: 3px;
+    outline: none;
+    height: 400px;
+    user-select: none;
+}
+.btn_index:focus {
+    border: 2px solid #E9957B;
+}
+.btn_index:hover {
+    box-shadow: 0 1.5px #CFCFCF;
+}
+.btn_index:active {
+    background-color: #D2D2D2;
+}
+.table_center {
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.btn_green {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    user-select: none;
+}
+.btn_green:hover {
+    background-color: #52be56;
+    box-shadow: 0 1.5px #CFCFCF;
+}
+.btn_green:active {
+    background-color: #006516;
+}
+#map {
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+}
+.map_cell {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 40px;
+    font-size: 100%;
+    background-color: #B7BDB4;
+    user-select: none;
+}
+.map_cell:hover {
+    background-color: #D3D7CF;
+}
+.map_cell:active {
+    box-shadow: inset 0 1.5px #A6ACA4;
+}
+#side {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin: 0;
+    user-select: none;
+}

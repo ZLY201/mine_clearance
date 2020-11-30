@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    <style>
+        button {
+            width: 80% !important;
+            min-width: 0 !important;
+            margin-top: 10px !important;
+            height: 50px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_center">
+        <div id="container" style="width: 100%; display: flex; text-align: center; margin: 0 auto;">
+            <div style="display: flex; text-align: center; margin: 0 auto;">
+                <div id="map"></div>
+                <div id="side">
+                    <div style="user-select: none;">
+                        <img src="../images/flag.png">
+                        <div id="num">0/10</div>
+                    </div>
+                    <div style="user-select: none;">
+                        <img src="../images/clock.jpg">
+                        <div id="time">00:00</div>
+                    </div>
+                    <div style="width: 100%; position: absolute; bottom: 0; left: 0; margin: 0 auto;">
+                        <div style="width: 100%;"><button class="btn_index" onclick="Init()" id="replay">重开一局</button></div>
+                        <div style="width: 100%;"><button class="btn_index" onclick="javascript:window.location.href='../../index.html'">改变难度</button></div>
+                        <div style="width: 100%;"><button class="btn_index" onclick="stop_or_go(this)" id="stop" name="stop">暂停</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

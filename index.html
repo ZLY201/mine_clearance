@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+</head>
+<body>
+    <div class="container_center">
+        <table class="table_all_center">
+            <tr>
+                <td align="right">
+                    <button class="btn_index" id="8_8_10" onclick="start(this.id)">
+                        <h2>8 x 8</h2>
+                        <b>10</b>个雷
+                    </button>
+                </td>
+                <td align="left">
+                    <button class="btn_index" id="16_16_40" onclick="start(this.id)">
+                        <h2>16 x 16</h2>
+                        <b>40</b>个雷
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <button class="btn_index" id="30_16_99" onclick="start(this.id)">
+                        <h2>30 x 16</h2>
+                        <b>99</b>个雷
+                    </button>
+                </td>
+                <td align="left">
+                    <button class="btn_index" onclick="javscript:window.location.href='./public/views/custom.html'">
+                        <h2>?</h2>
+                        自定义
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    function start(id) {
+        localStorage.setItem("map_message", id);
+        window.location.href = "./public/views/main.html";
+    }
+</script>
+</html>
