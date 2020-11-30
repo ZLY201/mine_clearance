@@ -208,7 +208,15 @@ function Click(element) {
 function failed(x, y) {
     for(var i = 1; i <= row; ++i) {
         for(var j = 1; j <= col; ++j) {
+            if(user_map[i][j] != flag) continue;
+            if(map[i][j] == Mine) continue;
+            $("#" + i + "_" + j).css("background-color", "red");
+        }
+    }
+    for(var i = 1; i <= row; ++i) {
+        for(var j = 1; j <= col; ++j) {
             if(map[i][j] != Mine) continue;
+            if(user_map[i][j] == flag) continue;
             if(i == x && j == y) {
                 $("#" + i + "_" + j).css("background-color", "red");
             }
