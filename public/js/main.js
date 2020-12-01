@@ -32,13 +32,18 @@ var user_count = 0;
 var sys_id = null;
 $("body").ready(function() {
     var map_message = localStorage.getItem("map_message");
+    if(map_message) {
+        sessionStorage.setItem("map_message", map_message);
+        localStorage.removeItem("map_message");
+    }
+    map_message = sessionStorage.getItem("map_message");
     if(map_message == null) {
         row = 8;
         col = 8;
         count = 10;
+        sessionStorage.setItem("map_message", row + "_" + col + "count");
     }
     else {
-        localStorage.removeItem("map_message");
         map_message = map_message.split("_");
         row = parseInt(map_message[1]);
         col = parseInt(map_message[0]);
@@ -69,7 +74,7 @@ function get_mine(x, y) {
 }
 
 function Init() {
-    var width = 100 / col;
+    //var width = 100 / col;
     var Map = document.getElementById("map");
     $(Map).html("");
     Map.oncontextmenu = function(e) {
@@ -78,7 +83,7 @@ function Init() {
     for(var i = 1; i <= row; ++i) {
         var div_row = document.createElement("div");
         $(div_row).css("display", "flex");
-        $(div_row).css("width", "100%");
+        //$(div_row).css("width", "100%");
         div_row.oncontextmenu = function(e) {
             e.preventDefault();
         };
@@ -86,8 +91,8 @@ function Init() {
             var div_col = document.createElement("div");
             //$(div_col).css("width", width + "%");
             $(div_col).css("width", size);
-            $(div_col).css("margin-top", "3px");
-            $(div_col).css("margin-left", "3px");
+            //$(div_col).css("margin-top", "3px");
+            //$(div_col).css("margin-left", "3px");
             //$(div_col).css("padding-top", width + "%");
             $(div_col).css("padding-top", size);
             $(div_col).css("position", "relative");
@@ -97,6 +102,9 @@ function Init() {
             var div = document.createElement("div");
             $(div).attr("id", i + "_" + j);
             $(div).attr("class", "map_cell");
+            if(j == col) {
+                $(div).css("border-right-width", "0");
+            }
             $(div).attr("onclick", "Click(this)");
             $(div).attr("ondblclick", "dbClick(this)");
             div.oncontextmenu = function(e) {
@@ -225,7 +233,8 @@ function failed(x, y) {
             }
             $("#" + i + "_" + j).css({
                 "background-image": "url(" + mine_path + ")",
-                "background-size": "100% 100%"
+                "background-size": "100% 100%",
+                "background-position": "top"
             });
         }
     }
@@ -315,7 +324,8 @@ function show_flag(element) {
         --user_count;
         $("#" + x + "_" + y).css({
             "background-image": "url(" + unknow_path + ")",
-            "background-size": "100% 100%"
+            "background-size": "100% 100%",
+            "background-position": "center"
         });
     }
     $("#num").text(user_count + "/" + count);

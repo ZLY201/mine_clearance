@@ -87,17 +87,19 @@ body:after {
     overflow: auto;
 }
 .map_cell {
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
     top: 0;
     left: 0;
     position: absolute;
-    text-align: center;
     margin: 0 auto;
+    padding: 0;
+    text-align: center;
     line-height: 40px;
     font-size: 100%;
     background-color: #B7BDB4;
     user-select: none;
+    border: 1px solid #F7F7F7;
 }
 .map_cell:hover {
     background-color: #D3D7CF;
@@ -109,6 +111,6 @@ body:after {
     position: relative;
     width: 200px;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     user-select: none;
 }
