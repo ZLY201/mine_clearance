@@ -1,6 +1,5 @@
 const Mine = -1;
 const direction = [[0, 1], [0, -1], [1, 0], [-1, 0], [1, 1], [-1, -1], [1, -1], [-1, 1]];
-const size = "40px";
 const victory = 1;
 const Open = 0;
 const fail = -1;
@@ -74,7 +73,10 @@ function get_mine(x, y) {
 }
 
 function Init() {
+    $("body").css("zoom", "1");
+    if(row >= 20) $("body").css("zoom", "0.75");
     //var width = 100 / col;
+    var size = "40px";
     var Map = document.getElementById("map");
     $(Map).html("");
     Map.oncontextmenu = function(e) {
@@ -176,6 +178,7 @@ function Init() {
     $("#stop").text("暂停");
     $("#stop").attr("name", "stop");
     $("#stop").attr("disabled", false);
+    $("#replay").text("重开一局");
 }
 
 function show_open(x, y) {
