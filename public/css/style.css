@@ -124,4 +124,5 @@ body:after {
     margin: 0 auto;
     user-select: none;
     -webkit-user-select: none;
+    cursor: default;
 }
