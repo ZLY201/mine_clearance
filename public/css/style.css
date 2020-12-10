@@ -1,5 +1,6 @@
 html, body {
     background-color: #F7F7F7;
+    overflow: auto;
 }
 body {
     width: 100%;
@@ -10,9 +11,9 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    overflow: auto;
     white-space: nowrap;
     user-select: none;
+    -webkit-user-select: none;
 }
 body:after {
     content: '';
@@ -21,31 +22,38 @@ body:after {
     vertical-align: middle;
 }
 .container_center {
-    width: 100%;
+    width: 98%;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
     white-space: normal;
-    overflow: auto;
+    
 }
 .table_all_center {
     width: 100%;
     margin: 0 auto;
     text-align: center;
 }
-.table_all_center > tr > td {
+.btn_fa {
     width: 50%;
+    min-width: 300px;
+    padding-top: max(49%, 300px);
+    position: relative;
 }
 .btn_index {
     width: 100%;
-    min-width: 200px;
-    max-width: 500px;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
     background-color: white;
     border: 1px solid #CFCFCF;
     border-radius: 3px;
     outline: none;
-    height: 400px;
     user-select: none;
+    -webkit-user-select: none;
 }
 .btn_index:focus {
     border: 2px solid #E9957B;
@@ -73,6 +81,7 @@ body:after {
     box-shadow: none;
     outline: none;
     user-select: none;
+    -webkit-user-select: none;
 }
 .btn_green:hover {
     background-color: #52be56;
@@ -84,7 +93,6 @@ body:after {
 #map {
     margin: 0 auto;
     text-align: center;
-    overflow: auto;
 }
 .map_cell {
     width: 37px;
@@ -98,6 +106,7 @@ body:after {
     line-height: 40px;
     font-size: 100%;
     background-color: #B7BDB4;
+    -webkit-user-select: none;
     user-select: none;
     border: 1px solid #F7F7F7;
 }
@@ -113,4 +122,5 @@ body:after {
     text-align: center;
     margin: 0 auto;
     user-select: none;
+    -webkit-user-select: none;
 }

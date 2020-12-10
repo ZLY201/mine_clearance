@@ -108,7 +108,7 @@ function Init() {
                 $(div).css("border-right-width", "0");
             }
             $(div).attr("onclick", "Click(this)");
-            $(div).attr("ondblclick", "dbClick(this)");
+            $(div).attr("ondblclick", "Click(this)");
             div.oncontextmenu = function(e) {
                 e.preventDefault();
             };
@@ -201,7 +201,10 @@ function Click(element) {
     if(over) return;
     var id = element.id.split("_");
     var x = parseInt(id[0]), y = parseInt(id[1]);
-    if(user_map[x][y]) return;
+    if(user_map[x][y]) {
+        dbClick(element);
+        return;
+    }
     if(map[x][y] == Mine) {
         over = fail;
         failed(x, y);
