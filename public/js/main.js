@@ -98,6 +98,7 @@ function Init() {
             //$(div_col).css("padding-top", width + "%");
             $(div_col).css("padding-top", size);
             $(div_col).css("position", "relative");
+            $(div_col).css("cursor", "default");
             div_col.oncontextmenu = function(e) {
                 e.preventDefault();
             };
