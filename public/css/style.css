@@ -37,6 +37,7 @@ body:after {
 .btn_fa {
     width: 50%;
     min-width: 300px;
+    padding-top: 50%;
     padding-top: max(49%, 300px);
     position: relative;
 }
